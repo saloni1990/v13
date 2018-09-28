@@ -17,7 +17,8 @@ var express          = require("express"),
         landingRoute = require("./routes/landing");
 //APP CONFIG    
 
-mongoose.connect("mongodb://localhost/sal_learns_to_code_v10");
+// mongoose.connect("mongodb://localhost/sal_learns_to_code_v10");
+mongoose.connect("mongodb://Saloni:Tomlip17@ds247699.mlab.com:47699/sallearnstocode");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(express.static(__dirname + "/public"));
