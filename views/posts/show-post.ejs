@@ -1,0 +1,65 @@
+<% include ../partials/header %>
+    <div class="row-post">        
+        <div class="post-wrapper">
+            <ul class="post">
+                <h4 class="postTitle"><a href="/blog/<%= blog._id %>"><%= blog.title %></a></h4> 
+                <li class="post-items">
+                    <div class="cardv3">
+                        <div>
+                            <img class="post-img" src="<%= blog.image %>"> 
+                            <p class="post-author"><em>Submitted by <%= blog.author.username%></em></p>
+                        </div>
+                        <div class="card__content">
+                            <div class="post-info">
+                                    <p><%=blog.post%></p>
+                                    <iframe src="<%= blog.map %>" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                    <div class="button-container">
+                                        <% if(currentUser && blog.author.id.equals(currentUser._id)) {%>
+                                            <a class="blog-button" id="edit-button" href="/blog/<%=blog._id%>/edit">Edit</a>
+                                            <form class="delete-form"action="/blog/<%=blog._id %>?_method=DELETE" method="POST">
+                                                <button  class="blog-button">Delete</button>   
+                                            </form>
+                                        <% } %>    
+                                        <a class="blog-button" href="/blog/<%= blog._id %>/comments/new">Add Comment</a>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+             </div>
+
+        <% include ../partials/about %> 
+</div>
+            <!-- COMMENTS SECTION-->
+<div class="comments-wrapper">
+    <ul class="comments-body">
+        <hr>
+        <h1>Comments</h1>
+        <% blog.comments.forEach(function(comment){ %>
+            <li class="comment">
+                <div class="comment-header">
+                        <div class="button-container comment-buttons">
+                                <% if(currentUser && comment.author.id.equals(currentUser._id)) {%>
+                                    <a class="blog-button" href="/blog/<%= blog._id%>/comments/<%= comment._id %>/edit"><i class="fas fa-pen-square"></i></a>
+                                    <form class="delete-form"action="/blog/<%= blog._id%>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                        <button class="blog-button"><i class="fas fa-trash-alt"></i></button>   
+                                    </form>
+                                <% } %>  
+                            </div> 
+                            <span class="author"><%= comment.author.username %></span>
+                </div>                
+                
+                <span class="date">10 days ago</span>
+                <p><%= comment.text %></p>
+
+                <hr>
+            </li>
+            
+        <% }) %>           
+    </ul>
+</div>
+
+
+
+<% include ../partials/footer %>

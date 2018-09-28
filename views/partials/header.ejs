@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sal Learns to Code</title>
+
+  <!-- BOOTSTRAP STYLESHEETS -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	
+  
+  <!-- STYLESHEETS -->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/css/style.css">
+  <link rel="stylesheet" href="/stylesheets/landing.css">
+
+  <!-- SLICK THEME -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css">
+	<!-- FONTAWESOME  -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="flex-nav">
+        
+        <header class="top">
+            
+            <a href="#" class="toggleNav"><i class="fas fa-bars"></i> Menu <i></i></a>
+
+          </header>
+
+        <ul>
+            <li class="brand"><a href="/"><i class="fas fa-code"></i>  Sal Learns to Code</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <!--if no user, then we will show login or register-->
+            <li>
+                <% if(!currentUser){ %>
+                  <span></span>
+                <% } else { %>
+                  <a><span>Logged in as <%= currentUser.username %></span></a>
+                <% } %>
+            </li>
+            <% if(!currentUser){ %>
+              <li><a  href="/login">Login</a></li>
+              <li><a  href="/register">Sign Up</a></li>
+            <% } else { %>
+          <!--else show logout link-->
+              <li><a class="#" href="/logout">Log Out</a></li>
+            
+            <% } %>
+            <li class="social"><a href=""><i class="fab fa-twitter"></i></a></li>
+            <li class="social"><a href=""><i class="fab fa-facebook"></i></a></li>
+            <li class="social"><a href=""><i class="fab fa-github"></i></a></li>
+            <li class="social"><a href=""><i class="fab fa-instagram"></i></a></li>
+        </ul>
+
+    </nav>
+  </div>
+  <img src="https://s3.eu-west-2.amazonaws.com/sallearnstocode.images/LOGO.svg" class="logo" alt="">
+
+
+    <% if (error && error.length > 0){ %>
+      <div class="alert alert-danger" role="alert">
+        <h1> <%= error %> </h1>
+      </div>
+    <% } %>
+            
+    <% if (success && success.length > 0){ %>
+      <div class="alert alert-success" role="alert">
+        <h1> <%= success %> </h1>
+      </div> 
+    <% } %>
+  </div>
+
+
+    
+
+
+
+	

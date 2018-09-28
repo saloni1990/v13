@@ -1,0 +1,52 @@
+<% include ../partials/header %>
+    
+<header>
+
+    <div class="wrapper">
+        <div class="single-item feat-item">
+            <% blog.forEach(function(blog){ %>
+                <div>
+                    <img class="img-fluid" src="<%= blog.image %>">
+                </div>
+            <% }) %>
+            </div>
+            <div class="buttons-wrapper" >
+                <a class="buttons" id="overlay-btn" href="/blog/newpost">Add New Blog</a>
+            </div>
+            
+        </div>
+
+    
+</header>
+
+
+
+<!-- Flex Container -->
+ <div class="card-wrapper">
+    <ul class="cards">
+        <% blog.forEach(function(blog){ %>
+            <li class="cards__item">
+                
+                <div class="cardv3">
+                    <div><img class="post-img" src="<%= blog.image %>"> </div>
+                    <div class="card__content">
+                        <h4 class="cardTitle"><a href="/blog/<%= blog._id %>"><%= blog.title %></a></h4>
+                        <% if (typeof blog.post == 'undefined' ) { %>
+                            <p> no content</p>  
+                        <% } else { %>
+                            <p> <%- blog.post.substring(0, 150) %>...</p>  
+                        <% } %>
+                        <a href="/blog/<%= blog._id %>" class="buttons read-more-btn">Read More</a>
+                    </div>
+                </div>
+            </li>
+        <% }); %>
+    </ul>
+ </div>
+
+ <% include ../partials/about %>
+
+
+
+
+<% include ../partials/footer %>

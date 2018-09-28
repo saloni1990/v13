@@ -1,0 +1,94 @@
+
+@import "variables";
+@import "components/navigation";
+@import "components/slick";
+@import "components/card.less";
+@import "components/buttons.less";
+
+html, body {
+	
+	font-family: @font-family;
+	/*color: white;*/
+	padding-top: 0px;
+	box-sizing: border-box;
+	:hover{
+		text-decoration: none;
+	}
+}
+
+img.logo {
+	display: flex;
+	width: 25%;
+	margin: 10vh auto;
+
+}
+
+.alert {
+	font-size: 0.4rem;
+}
+a {
+	text-decoration: none;
+}
+h1 {
+	font-weight: 400;
+	font-size: 2em;
+	text-align: center;
+	letter-spacing: 3px;
+}
+
+hr {
+	width: 100%;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	margin: 0 auto;
+}
+
+input[type="text"] {
+	color:black;
+}
+
+::placeholder{
+	color: rgba(0,0,0,0.2);
+}
+
+
+.formStyle {
+	width: 60%;
+	margin: 0 auto;
+}
+.formStyle input {
+    width: 100%;
+}
+
+
+.container {
+	margin-top: 3.0em;
+}
+
+.pageTitle {
+	margin-top: 1.0em;
+}
+
+.delete-form{
+	display: inline;
+}
+
+
+
+@media (min-width: 576px) {
+
+h2 {
+	font-size: 18px;
+}
+}
+
+
+
+/*MAP*/
+
+iframe {
+	width: 600px;
+	height: 450px;
+	padding-bottom: 1.25rem;
+}
+
