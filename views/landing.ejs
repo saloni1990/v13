@@ -1,30 +1,28 @@
 
 <% include ./partials/header %>
 
-<div id="page-wrapper">
-<div id="header">
-	<div class="inner">
-		<header>
-			<h1>Sal Learns to Code</h1>
-			<h3>A beginner learning to code</h3>
-			<hr>
-			<h2 class="welcome"> Welcome <%= topicshead %> </h2>
+		<div class="inner">
+			<div class="inner-content">
+					<h1>Sal Learns to Code</h1>
+					<h3>A beginner learning to code</h3>
+					<hr>
+					<h2 class="welcome"> Welcome <%= topicshead %> </h2>
+					
+					<form action="/" method="POST">
+						<input type="text" name="fname" placeholder="Your Name"></input>
+						<button class="btn btn-default btn-md"><i class="far fa-arrow-alt-circle-right"></i>Submit</button>
+					</form>	
+					<a href="#about" class="button-circled">About Me</a>
+
+			</div>
 			
-			<form action="/" method="POST">
-				<input type="text" name="fname" placeholder="Your Name"></input>
-				<button class="btn btn-default btn-md"><i class="far fa-arrow-alt-circle-right"></i>Submit</button>
-			</form>	
-			<h3><a href="/blog">View My Blog</a></h3>
-		</header>
-		<div>
-			<a href="/about" class="button circled scrolly">Begin</a>
 
+
+			
 		</div>
-	</div>
 
-</div>
-
-
-</div>
+		<div class="about">
+			<% include partials/about %>
+		</div>
 
 <% include partials/footer %>

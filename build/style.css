@@ -317,6 +317,19 @@ span.date,
   padding: 0 1.2rem;
   margin-right: 1rem;
 }
+.button-circled {
+  display: inline-block;
+  border-radius: 100%;
+  width: 8em;
+  height: 8em;
+  line-height: 8em;
+  text-align: center;
+  font-size: 1em;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  margin-top: 3rem;
+}
 html,
 body {
   font-family: 'Raleway', sans-serif;
@@ -328,10 +341,25 @@ html :hover,
 body :hover {
   text-decoration: none;
 }
+.inner {
+  background-image: url('https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  height: 100vh;
+  min-height: 30em;
+}
+.inner-content {
+  padding-top: 30vh;
+  text-align: center;
+}
 img.logo {
   display: flex;
   width: 25%;
   margin: 10vh auto;
+}
+.about {
+  margin-top: 1em;
 }
 .alert {
   font-size: 0.4rem;
@@ -346,10 +374,10 @@ h1 {
   letter-spacing: 3px;
 }
 hr {
-  width: 100%;
+  width: 50%;
   border-top: 1px solid #f8f8f8;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 0 auto;
+  margin: 10px auto;
 }
 input[type="text"] {
   color: black;
