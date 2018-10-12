@@ -222,7 +222,7 @@ iframe {
   box-shadow: 0 15px 45px 0 rgba(42, 51, 83, 0.12), 0 5px 15px rgba(0, 0, 0, 0.06);
   -webkit-transform: translate(0, -2px);
           transform: translate(0, -2px);
-  transition: all 2.15s ease;
+  transition: all 0.15s ease;
 }
 .card__content {
   display: flex;
