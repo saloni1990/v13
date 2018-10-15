@@ -32,10 +32,13 @@
         <% include ../partials/about %> 
 </div>
             <!-- COMMENTS SECTION-->
-<div class="comments-wrapper">
+    <hr>
+    <div class="comments-wrapper">
     <ul class="comments-body">
-        <hr>
+
+        <!-- <% if(blog.comments.length > 0) { %> -->
         <h1>Comments</h1>
+        <!-- <% } %> -->
         <% blog.comments.forEach(function(comment){ %>
             <li class="comment">
                 <div class="comment-header">

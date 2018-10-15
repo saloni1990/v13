@@ -72,6 +72,7 @@ a {
   }
   .flex-nav ul li a {
     padding: 5px;
+    font-size: 0.8rem;
   }
   .flex-nav ul .brand {
     display: none;
@@ -144,6 +145,11 @@ hr {
   text-align: center;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+.side p {
+  font-weight: 200;
+  font-size: 0.8rem;
+  width: 80%;
 }
 @media (max-width: 800px) {
   hr {
@@ -328,6 +334,9 @@ span.date,
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   margin-top: 3rem;
+}
+.button-circled:hover {
+  color: #fff;
 }
 html,
 body {
