@@ -53,7 +53,7 @@ app.use("/blog/:id/comments",commentsRoute);
 app.use("/blog", blogRoute); 
 app.use("/", landingRoute); 
 
-var port = process.env.PORT || 3000
+var port = process.env.PORT;
 app.listen(port, process.env.IP, function(){
     console.log("Server Has Started on" + port);
  });
