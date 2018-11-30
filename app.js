@@ -16,10 +16,12 @@ var express          = require("express"),
         blogRoute = require("./routes/blog"),
         landingRoute = require("./routes/landing");
 //APP CONFIG    
+var url = process.env.DATABASEURL || "mongodb://localhost/sal_learns_to_code_v10";
+mongoose.connect(url);
 
 // mongoose.connect("mongodb://localhost/sal_learns_to_code_v10");
 // mongoose.connect("process.env.DATABASEURL");
-mongoose.connect("mongodb://Saloni:Chaggers2104@ds247699.mlab.com:47699/sallearnstocode");
+// mongoose.connect("mongodb://Saloni:Chaggers2104@ds247699.mlab.com:47699/sallearnstocode");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(express.static(__dirname + "/public"));
@@ -53,9 +55,8 @@ app.use("/blog/:id/comments",commentsRoute);
 app.use("/blog", blogRoute); 
 app.use("/", landingRoute); 
 
-var port = process.env.PORT;
-app.listen(port, process.env.IP, function(){
-    console.log("Server Has Started on" + port);
+app.listen(process.env.PORT || 3000, process.env.IP, function(){
+    console.log("Server Has Started");
  });
 
 // app.listen(3000, function(){
