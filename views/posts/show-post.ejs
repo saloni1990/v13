@@ -12,7 +12,6 @@
                         <div class="card__content">
                             <div class="post-info">
                                     <p><%=blog.post%></p>
-                                    <iframe src="<%= blog.map %>" frameborder="0" style="border:0" allowfullscreen></iframe>
                                     <div class="button-container">
                                         <% if(currentUser && blog.author.id.equals(currentUser._id)) {%>
                                             <a class="blog-button" id="edit-button" href="/blog/<%=blog._id%>/edit">Edit</a>

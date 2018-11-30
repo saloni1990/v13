@@ -35,12 +35,12 @@ router.post("/", middleware.isLoggedIn, function(req, res){
     var title = req.body.blog.title;
     var image = req.body.blog.image;
     var post = req.body.blog.post;
-    var map = req.body.blog.map;
+    var category = req.body.blog.category;
     var author = {
         id: req.user._id,
         username: req.user.username
     };
-    var blog = {title: title, image: image, post: post, map: map, author:author};
+    var blog = {title: title, image: image, post: post, category: category, author:author};
     req.body.blog.post = req.sanitize(req.body.blog.post);
     Blog.create(blog, function(err, newlyCreated){
         if(err){

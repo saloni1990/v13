@@ -7,7 +7,7 @@ var blogSchema = new mongoose.Schema({
      date: String,
      image: String,
      post: String,
-     map: String,
+     category: String,
      author: {
           id: {
                type: mongoose.Schema.Types.ObjectId,
